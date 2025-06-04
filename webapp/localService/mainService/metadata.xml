@@ -1,0 +1,1443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='ECC')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="zz_pv_stock_zitm_materialsType">
+                <Key>
+                    <PropertyRef Name="MaterialNo"/>
+                </Key>
+                <Property Name="MaterialNo" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="StockQuantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="BlockQuantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="MaterialTxt" Type="Edm.String" Nullable="false" MaxLength="260"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Dimensions" Type="Edm.String" Nullable="false" MaxLength="32"/>
+                <Property Name="UnitDimensions" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="UnitWeight" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="UnitVolume" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Width" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="Height" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="ManufacturerPartNo" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ManufaturerNo" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ManufaturerNoTxt" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="Colours" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="GrossWeight" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="Volume" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="Length" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="OldMaterialNo" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ExternalMaterialGroup" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="ExternalMaterialGroupTxt" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="CO2Emissions" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="EPLogo" Type="Edm.String" Nullable="false" MaxLength="7"/>
+                <Property Name="MaterialGroup" Type="Edm.String" Nullable="false" MaxLength="9"/>
+                <Property Name="Laboratory" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="LaboratoryTxt" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="GlobalSafetyStock" Type="Edm.Int16" Nullable="false"/>
+                <Property Name="IntArticleNo" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="CrossPlantMatStatus" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CrossPlantMatStatusTxt" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="GiftCategory" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="simMaterialTxt" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="imageURL" Type="Edm.String" Nullable="false" MaxLength="133"/>
+                <Property Name="plantsURL" Type="Edm.String" Nullable="false" MaxLength="45"/>
+                <Property Name="globalStatus" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="status1000" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="status1100" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="status1200" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="status1000Crit" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="status1100Crit" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="status1200Crit" Type="Edm.Byte" Nullable="false"/>
+                <NavigationProperty Name="_plant" Type="Collection(com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001.zz_pv_stock_zitm_plantsType)" Partner="_material">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="zz_pv_stock_zitm_stor_locType">
+                <Key>
+                    <PropertyRef Name="MaterialNo"/>
+                    <PropertyRef Name="Plant"/>
+                    <PropertyRef Name="StorageLocation"/>
+                </Key>
+                <Property Name="MaterialNo" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="StorageLocation" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="StorageLocationTxt" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Quantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <NavigationProperty Name="_zitm" Type="com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001.zz_pv_stock_zitm_plantsType" Nullable="false" Partner="_stor_loc">
+                    <ReferentialConstraint Property="MaterialNo" ReferencedProperty="MaterialNo"/>
+                    <ReferentialConstraint Property="Plant" ReferencedProperty="Plant"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="zz_pv_stock_zitm_batchesType">
+                <Key>
+                    <PropertyRef Name="MaterialNo"/>
+                    <PropertyRef Name="Plant"/>
+                    <PropertyRef Name="BatchNo"/>
+                </Key>
+                <Property Name="MaterialNo" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="BatchNo" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="SupplierBatch" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="StorageLocation" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="StorageLocationTxt" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="StorageLocationTxtLong" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="StockQuantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="BlockQuantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <NavigationProperty Name="_plants" Type="com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001.zz_pv_stock_zitm_plantsType" Nullable="false" Partner="_batches">
+                    <ReferentialConstraint Property="MaterialNo" ReferencedProperty="MaterialNo"/>
+                    <ReferentialConstraint Property="Plant" ReferencedProperty="Plant"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="zz_pv_stock_zitm_plantsType">
+                <Key>
+                    <PropertyRef Name="MaterialNo"/>
+                    <PropertyRef Name="Plant"/>
+                </Key>
+                <Property Name="MaterialNo" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="PlantTxt" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="BlockQuantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="MRPType" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="MatReqPlanTypeTxt" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="FixedLotSize" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="safetyStock" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="stockStatus" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="stockStatusTxt" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="stockStatusTxtCrit" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="requiredStock" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="commitedStock" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="deliveredQuantity" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="openQuantity" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="techRoomQuantity" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="purchaseNotDelivered" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="physicalCommited" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="physicalOpen" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="totalAvailableStock" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="unavailableStock" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="stockQuantity" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="globalStockStatusTxt" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="quantity" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="lostCount" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="reservedQtyEvent" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="not10R" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="availableForReservation" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="UnavailCommitStock" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="quantityTotal" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="quantityCrit" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="imageURL" Type="Edm.String" Nullable="false" MaxLength="133"/>
+                <NavigationProperty Name="_batches" Type="Collection(com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001.zz_pv_stock_zitm_batchesType)" Partner="_plants">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+                <NavigationProperty Name="_material" Type="com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001.zz_pv_stock_zitm_materialsType" Nullable="false" Partner="_plant">
+                    <ReferentialConstraint Property="MaterialNo" ReferencedProperty="MaterialNo"/>
+                </NavigationProperty>
+                <NavigationProperty Name="_stor_loc" Type="Collection(com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001.zz_pv_stock_zitm_stor_locType)" Partner="_zitm">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="zz_pv_stock_zitm_batches" EntityType="com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001.zz_pv_stock_zitm_batchesType">
+                    <NavigationPropertyBinding Path="_plants" Target="zz_pv_stock_zitm_plants"/>
+                </EntitySet>
+                <EntitySet Name="zz_pv_stock_zitm_materials" EntityType="com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001.zz_pv_stock_zitm_materialsType">
+                    <NavigationPropertyBinding Path="_plant" Target="zz_pv_stock_zitm_plants"/>
+                </EntitySet>
+                <EntitySet Name="zz_pv_stock_zitm_plants" EntityType="com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001.zz_pv_stock_zitm_plantsType">
+                    <NavigationPropertyBinding Path="_batches" Target="zz_pv_stock_zitm_batches"/>
+                    <NavigationPropertyBinding Path="_material" Target="zz_pv_stock_zitm_materials"/>
+                    <NavigationPropertyBinding Path="_stor_loc" Target="zz_pv_stock_zitm_stor_loc"/>
+                </EntitySet>
+                <EntitySet Name="zz_pv_stock_zitm_stor_loc" EntityType="com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001.zz_pv_stock_zitm_stor_locType">
+                    <NavigationPropertyBinding Path="_zitm" Target="zz_pv_stock_zitm_plants"/>
+                </EntitySet>
+            </EntityContainer>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/MaterialNo">
+                <Annotation Term="SAP__common.Text" Path="MaterialTxt">
+                    <Annotation Term="SAP__UI.TextArrangement" EnumMember="SAP__UI.TextArrangementType/TextFirst"/>
+                </Annotation>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/StockQuantity">
+                <Annotation Term="SAP__common.Label" String="Stock Quantity"/>
+                <Annotation Term="SAP__measures.Unit" Path="UnitOfMeasure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/BlockQuantity">
+                <Annotation Term="SAP__common.Label" String="Block Quantity"/>
+                <Annotation Term="SAP__measures.Unit" Path="UnitOfMeasure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/MaterialTxt">
+                <Annotation Term="SAP__common.Label" String="Material Description"/>
+                <Annotation Term="SAP__common.Heading" String="Long description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Long description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/UnitOfMeasure">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/Dimensions">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Size/dimensions"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/UnitDimensions">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Unit of Dimension"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Unit of Dimension for Length/Width/Height"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/UnitWeight">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Unit of Weight"/>
+                <Annotation Term="SAP__common.Heading" String="WUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/UnitVolume">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Volume Unit"/>
+                <Annotation Term="SAP__common.Heading" String="VUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/Width">
+                <Annotation Term="SAP__measures.Unit" Path="UnitDimensions"/>
+                <Annotation Term="SAP__common.Label" String="Width"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/Height">
+                <Annotation Term="SAP__measures.Unit" Path="UnitDimensions"/>
+                <Annotation Term="SAP__common.Label" String="Height"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/ManufacturerPartNo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Mfr Part Number"/>
+                <Annotation Term="SAP__common.Heading" String="MPN"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Manufacturer Part Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/ManufaturerNo">
+                <Annotation Term="SAP__common.Text" Path="ManufaturerNoTxt">
+                    <Annotation Term="SAP__UI.TextArrangement" EnumMember="SAP__UI.TextArrangementType/TextFirst"/>
+                </Annotation>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zz_dd_stock_sh_manufacturer/0001;ps='srvd-zz_sd_stock_report_zitm-0001';va='com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001.et-zz_pv_stock_zitm_materials.manufaturerno'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Manufacturer"/>
+                <Annotation Term="SAP__common.Heading" String="Manufact."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Number of a Manufacturer"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/Colours">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zz_dd_stock_sh_colour/0001;ps='srvd-zz_sd_stock_report_zitm-0001';va='com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001.et-zz_pv_stock_zitm_materials.colours'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="Colour"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Colours"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/GrossWeight">
+                <Annotation Term="SAP__measures.Unit" Path="UnitWeight"/>
+                <Annotation Term="SAP__common.Label" String="Gross Weight"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/Volume">
+                <Annotation Term="SAP__measures.Unit" Path="UnitVolume"/>
+                <Annotation Term="SAP__common.Label" String="Volume"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/Length">
+                <Annotation Term="SAP__measures.Unit" Path="UnitDimensions"/>
+                <Annotation Term="SAP__common.Label" String="Length"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/OldMaterialNo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Old material number"/>
+                <Annotation Term="SAP__common.Heading" String="Old material no."/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/ExternalMaterialGroup">
+                <Annotation Term="SAP__common.Text" Path="ExternalMaterialGroupTxt">
+                    <Annotation Term="SAP__UI.TextArrangement" EnumMember="SAP__UI.TextArrangementType/TextFirst"/>
+                </Annotation>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Ext. Material Group"/>
+                <Annotation Term="SAP__common.Heading" String="Ext. Material Grp"/>
+                <Annotation Term="SAP__common.QuickInfo" String="External Material Group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/CO2Emissions">
+                <Annotation Term="SAP__measures.Unit" Path="UnitOfMeasure"/>
+                <Annotation Term="SAP__common.Label" String="CO2 Emissions (g.)"/>
+                <Annotation Term="SAP__common.Heading" String="CO2 Emissions(g.)"/>
+                <Annotation Term="SAP__common.QuickInfo" String="CO2 Emissions(g.)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/MaterialGroup">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zz_dd_stock_sh_mat_group/0001;ps='srvd-zz_sd_stock_report_zitm-0001';va='com.sap.gateway.srvd.zz_sd_stock_report_zitm.v0001.et-zz_pv_stock_zitm_materials.materialgroup'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Material Group"/>
+                <Annotation Term="SAP__common.Heading" String="Matl Group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/Laboratory">
+                <Annotation Term="SAP__common.Text" Path="LaboratoryTxt"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Lab/Office"/>
+                <Annotation Term="SAP__common.Heading" String="L/O"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Laboratory/design office"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/IntArticleNo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="EAN/UPC"/>
+                <Annotation Term="SAP__common.QuickInfo" String="International Article Number (EAN/UPC)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/CrossPlantMatStatus">
+                <Annotation Term="SAP__common.Text" Path="CrossPlantMatStatusTxt"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="X-Plant Mat.Status"/>
+                <Annotation Term="SAP__common.Heading" String="X-Plant Material Status"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Cross-Plant Material Status"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/imageURL">
+                <Annotation Term="SAP__common.Label" String="Picture"/>
+                <Annotation Term="SAP__UI.IsImageURL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/_plant">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/zz_pv_stock_zitm_materials">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_plant"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>globalStatus</PropertyPath>
+                                <PropertyPath>status1000</PropertyPath>
+                                <PropertyPath>status1100</PropertyPath>
+                                <PropertyPath>status1200</PropertyPath>
+                                <PropertyPath>status1000Crit</PropertyPath>
+                                <PropertyPath>status1100Crit</PropertyPath>
+                                <PropertyPath>status1200Crit</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>globalStatus</PropertyPath>
+                                <PropertyPath>status1000</PropertyPath>
+                                <PropertyPath>status1100</PropertyPath>
+                                <PropertyPath>status1200</PropertyPath>
+                                <PropertyPath>status1000Crit</PropertyPath>
+                                <PropertyPath>status1100Crit</PropertyPath>
+                                <PropertyPath>status1200Crit</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType">
+                <Annotation Term="SAP__common.Label" String="PV for ZITM Materials"/>
+                <Annotation Term="SAP__UI.DataPoint" Qualifier="globalStatus">
+                    <Record>
+                        <PropertyValue Property="Value" Path="globalStatus"/>
+                        <PropertyValue Property="Title" String="Global Status"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.DataPoint" Qualifier="status1000">
+                    <Record>
+                        <PropertyValue Property="Value" Path="status1000"/>
+                        <PropertyValue Property="Title" String="Stock Brussels"/>
+                        <PropertyValue Property="Criticality" Path="status1000Crit"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.DataPoint" Qualifier="status1100">
+                    <Record>
+                        <PropertyValue Property="Value" Path="status1100"/>
+                        <PropertyValue Property="Title" String="Stock Luxembourg"/>
+                        <PropertyValue Property="Criticality" Path="status1100Crit"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.DataPoint" Qualifier="status1200">
+                    <Record>
+                        <PropertyValue Property="Value" Path="status1200"/>
+                        <PropertyValue Property="Title" String="Stock Strasbourg"/>
+                        <PropertyValue Property="Criticality" Path="status1200Crit"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderFacets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.DataPoint#globalStatus"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.DataPoint#status1000"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.DataPoint#status1100"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.DataPoint#status1200"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Header"/>
+                            <PropertyValue Property="ID" String="OrderTab"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="General Information"/>
+                                        <PropertyValue Property="ID" String="Order_General"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#General"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Measures"/>
+                                        <PropertyValue Property="ID" String="Order_Measures"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#Measures"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Plants"/>
+                            <PropertyValue Property="ID" String="ItemsTab"/>
+                            <PropertyValue Property="Target" AnnotationPath="_plant/@SAP__UI.LineItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="General">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="MaterialGroup"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ExternalMaterialGroup"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ManufaturerNo"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ManufacturerPartNo"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Colours"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="StockQuantity"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="BlockQuantity"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="Measures">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="GrossWeight"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Volume"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Length"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Width"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Height"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="imageURL"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="MaterialNo"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="OldMaterialNo"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ExternalMaterialGroup"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="GlobalSafetyStock"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="MaterialGroup"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Colours"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="GrossWeight"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Volume"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Length"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Width"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Height"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ManufaturerNo"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ManufacturerPartNo"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="IntArticleNo"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="MaterialTxt"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ManufaturerNoTxt"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CrossPlantMatStatusTxt"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="GiftCategory"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="simMaterialTxt"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="plantsURL"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="globalStatus"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="status1000"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="status1100"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="status1000Crit"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="status1100Crit"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="status1200Crit"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>MaterialNo</PropertyPath>
+                        <PropertyPath>MaterialTxt</PropertyPath>
+                        <PropertyPath>MaterialGroup</PropertyPath>
+                        <PropertyPath>Colours</PropertyPath>
+                        <PropertyPath>ManufaturerNo</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_stor_locType/MaterialNo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_stor_locType/Plant">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plant"/>
+                <Annotation Term="SAP__common.Heading" String="Plnt"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_stor_locType/StorageLocation">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Storage Location"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_stor_locType/UnitOfMeasure">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_stor_locType/Quantity">
+                <Annotation Term="SAP__measures.Unit" Path="UnitOfMeasure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/zz_pv_stock_zitm_stor_loc">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_zitm"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Plant"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="StorageLocation"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Quantity"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_stor_locType">
+                <Annotation Term="SAP__common.Label" String="Proj.View for zz_dd_stock_zite_assets"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_batchesType/MaterialNo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_batchesType/Plant">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plant"/>
+                <Annotation Term="SAP__common.Heading" String="Plnt"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_batchesType/BatchNo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Batch"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Batch Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_batchesType/SupplierBatch">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Supplier Batch"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Supplier Batch Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_batchesType/StorageLocation">
+                <Annotation Term="SAP__common.Text" Path="StorageLocationTxt">
+                    <Annotation Term="SAP__UI.TextArrangement" EnumMember="SAP__UI.TextArrangementType/TextFirst"/>
+                </Annotation>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Storage Location"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_batchesType/UnitOfMeasure">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_batchesType/StockQuantity">
+                <Annotation Term="SAP__common.Label" String="Stock Quantity"/>
+                <Annotation Term="SAP__measures.Unit" Path="UnitOfMeasure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_batchesType/BlockQuantity">
+                <Annotation Term="SAP__common.Label" String="Block Quantity"/>
+                <Annotation Term="SAP__measures.Unit" Path="UnitOfMeasure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/zz_pv_stock_zitm_batches">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_plants"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Plant"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="BatchNo"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="SupplierBatch"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="StorageLocation"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="StockQuantity"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="BlockQuantity"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_batchesType">
+                <Annotation Term="SAP__common.Label" String="PV for ZITM Plants"/>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BatchNo"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="SupplierBatch"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="StorageLocation"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="StockQuantity"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BlockQuantity"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/MaterialNo">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/Plant">
+                <Annotation Term="SAP__common.Text" Path="PlantTxt">
+                    <Annotation Term="SAP__UI.TextArrangement" EnumMember="SAP__UI.TextArrangementType/TextFirst"/>
+                </Annotation>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plant"/>
+                <Annotation Term="SAP__common.Heading" String="Plnt"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/UnitOfMeasure">
+                <Annotation Term="SAP__common.IsUnit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/BlockQuantity">
+                <Annotation Term="SAP__common.Label" String="Block Quantity"/>
+                <Annotation Term="SAP__measures.Unit" Path="UnitOfMeasure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/MRPType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="MRP Type"/>
+                <Annotation Term="SAP__common.Heading" String="Typ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/FixedLotSize">
+                <Annotation Term="SAP__measures.Unit" Path="UnitOfMeasure"/>
+                <Annotation Term="SAP__common.Label" String="Fixed lot size"/>
+                <Annotation Term="SAP__common.Heading" String="Fix. lot size"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/stockStatus">
+                <Annotation Term="SAP__common.Text" Path="stockStatusTxt"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Stock status"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/stockStatusTxt">
+                <Annotation Term="SAP__common.Label" String="Stock Status"/>
+                <Annotation Term="SAP__common.Heading" String="Stock status description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Stock status description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/stockQuantity">
+                <Annotation Term="SAP__common.Label" String="Stock Quantity"/>
+                <Annotation Term="SAP__common.Heading" String="Stock Available"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Stock Available"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/globalStockStatusTxt">
+                <Annotation Term="SAP__common.Label" String="Global Status"/>
+                <Annotation Term="SAP__common.Heading" String="Stock status description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Stock status description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/_batches">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/zz_pv_stock_zitm_plants">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_batches"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_material"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_stor_loc"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>safetyStock</PropertyPath>
+                                <PropertyPath>stockStatus</PropertyPath>
+                                <PropertyPath>stockStatusTxt</PropertyPath>
+                                <PropertyPath>stockStatusTxtCrit</PropertyPath>
+                                <PropertyPath>requiredStock</PropertyPath>
+                                <PropertyPath>commitedStock</PropertyPath>
+                                <PropertyPath>deliveredQuantity</PropertyPath>
+                                <PropertyPath>openQuantity</PropertyPath>
+                                <PropertyPath>techRoomQuantity</PropertyPath>
+                                <PropertyPath>purchaseNotDelivered</PropertyPath>
+                                <PropertyPath>physicalCommited</PropertyPath>
+                                <PropertyPath>physicalOpen</PropertyPath>
+                                <PropertyPath>totalAvailableStock</PropertyPath>
+                                <PropertyPath>unavailableStock</PropertyPath>
+                                <PropertyPath>stockQuantity</PropertyPath>
+                                <PropertyPath>globalStockStatusTxt</PropertyPath>
+                                <PropertyPath>quantity</PropertyPath>
+                                <PropertyPath>lostCount</PropertyPath>
+                                <PropertyPath>reservedQtyEvent</PropertyPath>
+                                <PropertyPath>not10R</PropertyPath>
+                                <PropertyPath>availableForReservation</PropertyPath>
+                                <PropertyPath>UnavailCommitStock</PropertyPath>
+                                <PropertyPath>quantityTotal</PropertyPath>
+                                <PropertyPath>quantityCrit</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>safetyStock</PropertyPath>
+                                <PropertyPath>stockStatus</PropertyPath>
+                                <PropertyPath>stockStatusTxt</PropertyPath>
+                                <PropertyPath>stockStatusTxtCrit</PropertyPath>
+                                <PropertyPath>requiredStock</PropertyPath>
+                                <PropertyPath>commitedStock</PropertyPath>
+                                <PropertyPath>deliveredQuantity</PropertyPath>
+                                <PropertyPath>openQuantity</PropertyPath>
+                                <PropertyPath>techRoomQuantity</PropertyPath>
+                                <PropertyPath>purchaseNotDelivered</PropertyPath>
+                                <PropertyPath>physicalCommited</PropertyPath>
+                                <PropertyPath>physicalOpen</PropertyPath>
+                                <PropertyPath>totalAvailableStock</PropertyPath>
+                                <PropertyPath>unavailableStock</PropertyPath>
+                                <PropertyPath>stockQuantity</PropertyPath>
+                                <PropertyPath>globalStockStatusTxt</PropertyPath>
+                                <PropertyPath>quantity</PropertyPath>
+                                <PropertyPath>lostCount</PropertyPath>
+                                <PropertyPath>reservedQtyEvent</PropertyPath>
+                                <PropertyPath>not10R</PropertyPath>
+                                <PropertyPath>availableForReservation</PropertyPath>
+                                <PropertyPath>UnavailCommitStock</PropertyPath>
+                                <PropertyPath>quantityTotal</PropertyPath>
+                                <PropertyPath>quantityCrit</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/_stor_loc">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType">
+                <Annotation Term="SAP__common.Label" String="PV for ZITM Plants"/>
+                <Annotation Term="SAP__UI.DataPoint" Qualifier="globalStockStatusTxt">
+                    <Record>
+                        <PropertyValue Property="Value" Path="globalStockStatusTxt"/>
+                        <PropertyValue Property="Title" String="Global Status"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.DataPoint" Qualifier="quantity">
+                    <Record>
+                        <PropertyValue Property="Value" Path="quantity"/>
+                        <PropertyValue Property="Title" String="PV for ZITM Plants"/>
+                        <PropertyValue Property="CriticalityCalculation">
+                            <Record>
+                                <PropertyValue Property="ImprovementDirection" EnumMember="SAP__UI.ImprovementDirectionType/Maximize"/>
+                                <PropertyValue Property="DeviationRangeLowValue" Decimal="50"/>
+                                <PropertyValue Property="ToleranceRangeLowValue" Decimal="75"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.DataPoint" Qualifier="stockStatusTxt">
+                    <Record>
+                        <PropertyValue Property="Value" Path="stockStatusTxt"/>
+                        <PropertyValue Property="Title" String="Stock Status"/>
+                        <PropertyValue Property="Criticality" Path="stockStatusTxtCrit"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderFacets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.DataPoint#globalStockStatusTxt"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.DataPoint#stockStatusTxt"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="General Information"/>
+                            <PropertyValue Property="ID" String="OrderTab"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="General Info"/>
+                                        <PropertyValue Property="ID" String="Order_General"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#General"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Assets"/>
+                            <PropertyValue Property="ID" String="ItemsTab"/>
+                            <PropertyValue Property="Target" AnnotationPath="_batches/@SAP__UI.LineItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="General">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="requiredStock"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="openQuantity"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="deliveredQuantity"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="quantity"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="not10R"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="techRoomQuantity"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="unavailableStock"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="commitedStock"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="stockQuantity"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="BlockQuantity"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="safetyStock"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="totalAvailableStock"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Plant"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Label" String="Count %"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Chart#chrtRadial"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="quantity"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="requiredStock"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="openQuantity"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="deliveredQuantity"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="not10R"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="techRoomQuantity"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="unavailableStock"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="commitedStock"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="stockQuantity"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="safetyStock"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BlockQuantity"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="totalAvailableStock"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="stockStatusTxt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="stockStatus"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Criticality" Path="stockStatusTxtCrit"/>
+                            <PropertyValue Property="Value" Path="stockStatusTxt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="globalStockStatusTxt"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>MaterialNo</PropertyPath>
+                        <PropertyPath>Plant</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/PlantTxt">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Name 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/stockStatusTxtCrit">
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/quantityCrit">
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/imageURL">
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/ManufaturerNoTxt">
+                <Annotation Term="SAP__common.Label" String="Name"/>
+                <Annotation Term="SAP__common.Heading" String="Name 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name 1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/ExternalMaterialGroupTxt">
+                <Annotation Term="SAP__common.Label" String="Ext. matl grp descr."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Description for external material group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/EPLogo">
+                <Annotation Term="SAP__common.Label" String="EP Logo"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/LaboratoryTxt">
+                <Annotation Term="SAP__common.Label" String="Lab. description"/>
+                <Annotation Term="SAP__common.Heading" String="Text: Lab./engineering office"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Description of the laboratory/engineering office"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/GlobalSafetyStock">
+                <Annotation Term="SAP__common.Label" String="Global Safety Stock"/>
+                <Annotation Term="SAP__common.Heading" String="Global Safety Stock Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Global Safety Stock Qty."/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/CrossPlantMatStatusTxt">
+                <Annotation Term="SAP__common.Label" String="Description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Description of material status from MM/PP view"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/simMaterialTxt">
+                <Annotation Term="SAP__common.Label" String="Material Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/globalStatus">
+                <Annotation Term="SAP__common.Label" String="Stk status desc"/>
+                <Annotation Term="SAP__common.Heading" String="Stock status description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Stock status description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/status1000">
+                <Annotation Term="SAP__common.Label" String="Stk status desc"/>
+                <Annotation Term="SAP__common.Heading" String="Stock status description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Stock status description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/status1100">
+                <Annotation Term="SAP__common.Label" String="Stk status desc"/>
+                <Annotation Term="SAP__common.Heading" String="Stock status description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Stock status description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_materialsType/status1200">
+                <Annotation Term="SAP__common.Label" String="Stk status desc"/>
+                <Annotation Term="SAP__common.Heading" String="Stock status description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Stock status description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_stor_locType/StorageLocationTxt">
+                <Annotation Term="SAP__common.Label" String="Description"/>
+                <Annotation Term="SAP__common.Heading" String="Stor. Loc. Descr."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Description of Storage Location"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_batchesType/StorageLocationTxt">
+                <Annotation Term="SAP__common.Label" String="Description"/>
+                <Annotation Term="SAP__common.Heading" String="Stor. Loc. Descr."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Description of Storage Location"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_batchesType/StorageLocationTxtLong">
+                <Annotation Term="SAP__common.Label" String="Stor dedicated Purpo"/>
+                <Annotation Term="SAP__common.Heading" String="Storage dedicated Purpose"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Storage dedicated Purpose"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/MatReqPlanTypeTxt">
+                <Annotation Term="SAP__common.Label" String="MRP Type Name"/>
+                <Annotation Term="SAP__common.Heading" String="MRP Description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Requirements Planning Type Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/safetyStock">
+                <Annotation Term="SAP__common.Label" String="Safety stock"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/requiredStock">
+                <Annotation Term="SAP__common.Label" String="LSA Ordered Qty."/>
+                <Annotation Term="SAP__common.Heading" String="LSA Ordered Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="LSA Ordered Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/commitedStock">
+                <Annotation Term="SAP__common.Label" String="Commited stock"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/deliveredQuantity">
+                <Annotation Term="SAP__common.Label" String="Deliv.quantity"/>
+                <Annotation Term="SAP__common.Heading" String="Delivered quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Delivered quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/openQuantity">
+                <Annotation Term="SAP__common.Label" String="LSA Open Qty."/>
+                <Annotation Term="SAP__common.Heading" String="LSA Open quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="LSA Open quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/techRoomQuantity">
+                <Annotation Term="SAP__common.Label" String="Tech room quantity"/>
+                <Annotation Term="SAP__common.Heading" String="Technical room quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/purchaseNotDelivered">
+                <Annotation Term="SAP__common.Label" String="Purch not dlv"/>
+                <Annotation Term="SAP__common.Heading" String="Purchased Not Delivered"/>
+                <Annotation Term="SAP__common.QuickInfo" String="LSA Open quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/physicalCommited">
+                <Annotation Term="SAP__common.Label" String="Physical M-Comm."/>
+                <Annotation Term="SAP__common.Heading" String="Physical M-Committed"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Physical M-Committed"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/physicalOpen">
+                <Annotation Term="SAP__common.Label" String="Physical M-Open"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/totalAvailableStock">
+                <Annotation Term="SAP__common.Label" String="Total Avail. Stk."/>
+                <Annotation Term="SAP__common.Heading" String="Total Available Stock"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Total Available Stock"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/unavailableStock">
+                <Annotation Term="SAP__common.Label" String="Unavailable stock"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/quantity">
+                <Annotation Term="SAP__common.Label" String="Physical Count"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/lostCount">
+                <Annotation Term="SAP__common.Label" String="Lost count"/>
+                <Annotation Term="SAP__common.Heading" String="Lost count quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/reservedQtyEvent">
+                <Annotation Term="SAP__common.Label" String="Reserved qty event"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/not10R">
+                <Annotation Term="SAP__common.Label" String="NOT10R"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/availableForReservation">
+                <Annotation Term="SAP__common.Label" String="Available for rsv."/>
+                <Annotation Term="SAP__common.Heading" String="Available for reservation"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Available for reservation"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/UnavailCommitStock">
+                <Annotation Term="SAP__common.Label" String="Commited stock"/>
+            </Annotations>
+            <Annotations Target="SAP__self.zz_pv_stock_zitm_plantsType/quantityTotal">
+                <Annotation Term="SAP__common.Label" String="Physical Count"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
