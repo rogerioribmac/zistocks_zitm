@@ -24,6 +24,11 @@
                                 <PropertyValue Property="Value" Path="materialNo"/>
                             </Record>
                         </PropertyValue>
+                        <PropertyValue Property="Description">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="DG"/>
+                            </Record>
+                        </PropertyValue>
                         <PropertyValue Property="TypeName" String="Stock per Plant"/>
                         <PropertyValue Property="TypeNamePlural" String="Materials"/>
                     </Record>
@@ -66,6 +71,11 @@
                         <PropertyValue Property="Title">
                             <Record Type="UI.DataField">
                                 <PropertyValue Property="Value" Path="Plant"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="Description">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="DG"/>
                             </Record>
                         </PropertyValue>
                         <PropertyValue Property="TypeName" String="Stock Inventory"/>
